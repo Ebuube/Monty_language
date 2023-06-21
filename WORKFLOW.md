@@ -2,32 +2,33 @@
 
 ## TEMPLATE WORKFLOW
 
-Product Manager:	Onwuta Ebube Gideon
+Product Manager:	**Onwuta Ebube Gideon**
 
-Dev site:	https://github.com/Ebuube/monty
+Dev site:	**https://github.com/Ebuube/monty**
 
-Branch deployed on dev site:	develop
+Branch deployed on dev site:	**develop**
 
-Live site:	----------------------------
+Live site:	**----------------------------**
 
-Branch deployed on live site:	------------------------
+Branch deployed on live site:	**------------------------**
 
-When starting a dev ticket, branch from:	develop
+When starting a dev ticket, branch from:	**develop**
 
-Use this style to create a branch off develop for a ticket: git checkout --track -b \<new\_branch\_name\> \<origin\_develop\>
+Use this style to create a branch off develop for a ticket:	**git checkout --track -b \<new\_branch\_name\> \<origin\_develop\>**
 
-When starting a hotfix ticket, branch from:	main
+When starting a hotfix ticket, branch from:	**main**
 
-Format of hotfix branch name:	hotfix-\<ticket id\>-description
+Format of hotfix branch name:	**hotfix-\<ticket id\>-description**
 
-When updating your work with the remote, use:	git pull --rebase=preserve origin/\<branch name\> \<local branch name\>
+When updating your work with the remote, use:	**git pull --rebase=preserve origin/\<branch name\> \<local branch name\>**
 
-When merging your work post review, use:	git push --set-upstream origin \<local branch name\>
+When merging your work post review, use:	**git push --set-upstream origin \<local branch name\>**
 
 ## NAMING CONVENTION
 
-When dealing with an issue/ticket, create a branch from the remote 'develop' branch. Give the branch this name: \<name of developer\>/\<ticket\_or\_issue\_id-ticket\_description\>
-Example: ``Ebuube/12-documentation``
+When dealing with an issue/ticket, create a branch from the remote `develop` branch. Give the branch this name: **\<name of developer\>/\<ticket\_or\_issue\_id-ticket\_description\>**
+
+Example: `Ebuube/12-documentation`
 
 ## COMMITTING
 When committing your final work just prior to review, use this as the log summary:
@@ -37,6 +38,7 @@ When committing your final work just prior to review, use this as the log summar
 
 Detailed info of operations done.
 ```
+
 Example:
 ```
 $ git commit --amend
@@ -49,7 +51,7 @@ Updated README.md to explain what the repository is all about
 
 ## MAKING CHANGES
 
-**Don't** use `git reset` to make changes in the develop branch
+**Don't** use `git reset` to make changes in the `develop` branch.
 Altering the history of your repository is a big no-no if you’ve already published the commits
 
 ## TICKET PROGRESSION
@@ -81,4 +83,4 @@ Altering the history of your repository is a big no-no if you’ve already publi
 
 
 ## CONTRIBUTOR ACKNOWLEDGEMENT
-If a participant contributes to this repository, he should add his name to the AUTHORS.md file
+If a participant contributes to this repository, he should add his name to the `AUTHORS.md` file
