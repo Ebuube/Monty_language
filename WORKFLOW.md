@@ -14,6 +14,8 @@ Branch deployed on live site:	------------------------
 
 When starting a dev ticket, branch from:	develop
 
+Use this style to create a branch off develop for a ticket: git checkout --track -b \<new\_branch\_name\> \<origin\_develop\>
+
 When starting a hotfix ticket, branch from:	main
 
 Format of hotfix branch name:	hotfix-\<ticket id\>-description

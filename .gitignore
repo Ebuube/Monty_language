@@ -1,0 +1,4 @@
+# Files patterns to be ignore by git
+
+# Backup files created by `Aspell` linter
+*.bak
