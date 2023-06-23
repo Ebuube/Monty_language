@@ -23,8 +23,7 @@ int read_file(FILE *stream)
 		exit(EXIT_FAILURE);
 	}
 
-	/* line_count always starts from 1 */
-	for (line_count = 1; ; line_count++)
+	for (line_count = 1; ; line_count++)/* must star from 1 */
 	{/* Execute instructions */
 		nread = getline(&cp_line, &len, stream);
 		if (nread == -1)
@@ -34,16 +33,9 @@ int read_file(FILE *stream)
 		/* divide line into opcode and argument value */
 		/* Note: `cp_line` is modified by the parse_line() */
 		if (parse_line(arr_command, buf_size, cp_line) == 0)
-		{/* Empty line */
-			/* fprintf(stderr, \"Empty line\n\"); */
-		}
-		else
-			printf("L%lu: %s %s\n", line_count,
-				arr_command[0], arr_command[1]); /* test */
-		/*
-		 * check if arr_command[0] is NULL, it will cut the format
-		 * string
-		 */
+			continue;	/* empty line */
+		else	/* run opcode on Stack */
+			execute(arr_command, line_count);
 	}
 
 	free(cp_line);	/* clean up */
