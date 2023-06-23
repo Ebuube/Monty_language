@@ -18,5 +18,6 @@
 /* Function prototypes */
 int read_file(FILE *stream);
 size_t parse_line(char **arr_buffer, size_t buf_size, char *cp_line);
+int execute(char *arr_opcode_arg[], size_t line_number);
 
 #endif	/* __MONTY_H__ */
