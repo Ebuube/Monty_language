@@ -1,8 +1,8 @@
 # Maintains this codebase
 # =======================
 #
-# USAGE
-# =====
+# Makefile USAGE
+# ==============
 #
 # This Makefile does a lot of work on maintaining the codebase
 # 1) You can simply build the executable using
