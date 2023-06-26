@@ -110,7 +110,7 @@ BYTECODE_FILE := $(filename)
 DEBUG_CFLAGS = -Wall -Werror -Wextra -pedantic -std=c89 -ggdb3
 
 # Source files
-SRC = $(wildcard *.c)
+SRC = $(wildcard *.c opcodes/*.c utility/*.c)
 
 # Header files
 HEAD_FILES = $(wildcard *.h)

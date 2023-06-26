@@ -90,6 +90,8 @@ vagrant@ubuntu:~/monty$
 * **nop**: Usage: `nop`
 	- This opcode does **not** do anything.
 
+> Warning: Values outside INT\_MIN - INT\_MAX (both exclusive) can't be used as data values for the stack
+
 </details>
 
 <details>
