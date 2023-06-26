@@ -34,5 +34,8 @@ void _push(stack_t **stack, unsigned int line_number)
 
 	/* Add the node at the beginning of the list */
 	new->next = (*stack);
+	if ((*stack) != NULL)	/* Non-empty list */
+		(*stack)->prev = new;
+
 	(*stack) = new;
 }

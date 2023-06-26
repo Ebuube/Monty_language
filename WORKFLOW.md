@@ -20,7 +20,7 @@ When starting a hotfix ticket, branch from:	**main**
 
 Format of hotfix branch name:	**hotfix-\<ticket id\>-description**
 
-When updating your work with the remote, use:	**git pull --rebase=preserve origin \<local branch name\>**
+When updating your work with the remote, use:	**git pull origin \<local branch name\>**
 
 When merging your work post review, use:	**git push --set-upstream origin \<local branch name\>**
 
