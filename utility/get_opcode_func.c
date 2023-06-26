@@ -10,8 +10,9 @@ opcode_func *get_opcode_func(void)
 	size_t i = 0;
 
 	instruction_t funcs[] = {
-		{"push", _push},	/* edit */
-		{"pall", _pall},		/* edit */
+		{"push", _push},
+		{"pall", _pall},
+		{"pint", _pint},
 		{NULL, NULL}
 	};
 
