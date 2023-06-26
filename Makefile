@@ -110,7 +110,7 @@ BYTECODE_FILE := $(filename)
 DEBUG_CFLAGS = -Wall -Werror -Wextra -pedantic -std=c89 -ggdb3
 
 # Source files
-SRC = $(wildcard *.c)
+SRC = $(wildcard *.c opcodes/*.c utility/*.c)
 
 # Header files
 HEAD_FILES = $(wildcard *.h)
@@ -192,8 +192,8 @@ clean: # Clear the directory of all object codes, temporary files \
 	and the executable
 	$(RM) $(OBJ) $(NAME) $(TEMP) $(LOG_FILE)
 
-betty_check: # Ensure all source files are betty compliant
-	$(STYLE_CHECK) $(SRC) $(HEAD_FILES)
+betty_check: $(SRC) $(HEAD_FILES) # Ensure all source files are betty compliant
+	$(STYLE_CHECK) $?
 
 spell_check: $(SPELL_CHECK_FILES) # Ensure that these files are \
 	grammatically correct
