@@ -15,6 +15,7 @@ opcode_func *get_opcode_func(void)
 		{"pint", _pint},
 		{"pop", _pop},
 		{"swap", _swap},
+		{"add", _add},
 		{NULL, NULL}
 	};
 
