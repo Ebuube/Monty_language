@@ -1,4 +1,4 @@
-# The Monty language Interpreter
+# The Monty Language Interpreter
 
 [![Generic badge](https://img.shields.io/badge/Maintained-Yes-green.svg)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/Made%20With-C-blue.svg)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/contributors-1-green.svg)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/release-1.0.0-green.svg)](https://shields.io/)
 
@@ -154,4 +154,4 @@ vagrant@ubuntu:~/monty$
 
 
 ## Acknowledgements
-![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white) ![GITHUB](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white) 
+![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white) [![GITHUB](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/) [![Generic badge](https://img.shields.io/badge/ALX-AFRICA-white.svg)](https://shields.io/)(https://www.alxafrica.com/)
