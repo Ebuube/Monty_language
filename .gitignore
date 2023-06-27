@@ -1,0 +1,10 @@
+# Files patterns to be ignore by git
+
+# Backup files created by `Aspell` linter
+*.bak
+
+# Log file for valgrind check
+valgrind-out.txt
+
+# bytecode sample files
+bytecodes/
