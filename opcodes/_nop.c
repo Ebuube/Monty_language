@@ -7,7 +7,7 @@
  *
  * Return: nothing
  */
-void _nop(stack_t **stack, unsigned int line_number)
+void _nop(UNUSED stack_t **stack, UNUSED unsigned int line_number)
 {
 	return;
 }
