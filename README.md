@@ -1,4 +1,7 @@
 # The Monty language
+
+![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white) ![Maintainer](https://img.shields.io/badge/Maintained?-yes-green)
+
 Monty 0.98 is a scripting language that is first compiled into Monty byte codes (Just like Python). It relies on a unique stack, with specific instructions to manipulate it. The goal of this project is to create an interpreter for Monty ByteCodes files. The `monty` interpreter is designed to execute instructions in a Monty ByteCode file.
 
 <details>
@@ -35,7 +38,7 @@ Monty 0.98 is a scripting language that is first compiled into Monty byte codes 
 	* where `<file>` is the name of the file
 
 * If the file contains an invalid instruction, print the error message `L<line_number>: unknown instruction <opcode>`, followed by a new line, and exit with the status `EXIT_FAILURE`
-	* where is the line number where the instruction appears.
+	* where `line_number` is the line number where the instruction appears.
 	* Line numbers always start at 1
 
 * The monty program runs the byte codes line by line and stop if either:
@@ -146,4 +149,5 @@ vagrant@ubuntu:~/monty$
 
 ## Further Reading
 [Creating an Interpreter for Monty Byte codes Using C Programming Language](https://medium.com/@mr_robertamoah/creating-an-interpreter-for-monty-bytecodes-using-c-programming-language-287a2c2aa706?source=rss------programming-5)
+<br>
 [Monty Language: Implementing Stacks & Queues](https://micahondiwa.hashnode.dev/monty-language-implementing-stacks-queues)
