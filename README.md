@@ -1,4 +1,7 @@
-# The Monty language
+# The Monty Language Interpreter
+
+[![Generic badge](https://img.shields.io/badge/Maintained-Yes-green.svg)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/Made%20With-C-blue.svg)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/contributors-1-green.svg)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/release-1.0.0-green.svg)](https://shields.io/)
+
 Monty 0.98 is a scripting language that is first compiled into Monty byte codes (Just like Python). It relies on a unique stack, with specific instructions to manipulate it. The goal of this project is to create an interpreter for Monty ByteCodes files. The `monty` interpreter is designed to execute instructions in a Monty ByteCode file.
 
 <details>
@@ -35,7 +38,7 @@ Monty 0.98 is a scripting language that is first compiled into Monty byte codes 
 	* where `<file>` is the name of the file
 
 * If the file contains an invalid instruction, print the error message `L<line_number>: unknown instruction <opcode>`, followed by a new line, and exit with the status `EXIT_FAILURE`
-	* where is the line number where the instruction appears.
+	* where `line_number` is the line number where the instruction appears.
 	* Line numbers always start at 1
 
 * The monty program runs the byte codes line by line and stop if either:
@@ -146,4 +149,9 @@ vagrant@ubuntu:~/monty$
 
 ## Further Reading
 [Creating an Interpreter for Monty Byte codes Using C Programming Language](https://medium.com/@mr_robertamoah/creating-an-interpreter-for-monty-bytecodes-using-c-programming-language-287a2c2aa706?source=rss------programming-5)
+<br>
 [Monty Language: Implementing Stacks & Queues](https://micahondiwa.hashnode.dev/monty-language-implementing-stacks-queues)
+
+
+## Acknowledgements
+![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white) [![GITHUB](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/) [![Generic badge](https://img.shields.io/badge/ALX-AFRICA-white.svg)](https://www.alxafrica.com/)
