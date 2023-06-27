@@ -1,6 +1,6 @@
 # The Monty language
 
-![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white) [![Generic badge](https://img.shields.io/badge/Maintained-Yes-green.svg)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/Made%20With-C-blue.svg)](https://shields.io/) [![GitHub release](https://img.shields.io/github/release/Naereen/StrapDown.js.svg)](https://GitHub.com/Naereen/StrapDown.js/releases/)
+![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white) [![Generic badge](https://img.shields.io/badge/Maintained-Yes-green.svg)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/Made%20With-C-blue.svg)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/contributors-1-green.svg)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/release-1.0.0-green.svg)](https://shields.io/)
 
 Monty 0.98 is a scripting language that is first compiled into Monty byte codes (Just like Python). It relies on a unique stack, with specific instructions to manipulate it. The goal of this project is to create an interpreter for Monty ByteCodes files. The `monty` interpreter is designed to execute instructions in a Monty ByteCode file.
 
