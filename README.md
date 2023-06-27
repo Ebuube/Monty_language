@@ -1,4 +1,4 @@
-# The Monty language
+# The Monty language Interpreter
 
 [![Generic badge](https://img.shields.io/badge/Maintained-Yes-green.svg)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/Made%20With-C-blue.svg)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/contributors-1-green.svg)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/release-1.0.0-green.svg)](https://shields.io/)
 
