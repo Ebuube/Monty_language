@@ -91,6 +91,11 @@
 # 	'check' and 'all' target
 #
 # 8) To make use of the 'clean' target, does not require any dependency.
+#
+#
+# IMPORTANT NOTICE:
+# =================
+# Ensure this device has "sh" program for execution of the configuration file
 
 
 
@@ -119,16 +124,25 @@ HEAD_FILES = $(wildcard *.h)
 OBJ = $(SRC:.c=.o)
 
 # Markdown files
-MK_DOWN = $(wildcard *.md)
+MK_DOWN = $(wildcard *.md Documentation/*.md)
 
 # Git ignore files
 IGNORE_F = $(wildcard ./gitignore)
 
-# Files to be tested by spelling check
-SPELL_CHECK_FILES = $(SRC) $(HEAD_FILES) $(MK_DOWN) $(IGNORE_F)
-
 # Name of executable
 NAME = monty
+
+# Configuration file
+CONFIG_F = $(wildcard config.sh)
+
+# Command to use for installation
+INSTALL_CMD = "install"
+
+# Command to use for uninstalling
+UNINSTALL_CMD = "uninstall"
+
+# Shell to execute the configuration file
+SHELL = sh
 
 # Style checker
 STYLE_CHECK = betty
@@ -138,6 +152,9 @@ SPELL_CHECK = aspell
 
 # Flags for English (en) language checker
 SCFLAGS = check -l en
+
+# Files to be tested by spelling check
+SPELL_CHECK_FILES = $(SRC) $(HEAD_FILES) $(MK_DOWN) $(IGNORE_F) $(CONFIG_F)
 
 # Run a memory check using valgrind
 MEM_CHECK = valgrind
@@ -152,7 +169,7 @@ MC_FLAGS = --leak-check=full \
 	   --log-file=$(LOG_FILE) \
 
 # Essential files: Don't use comma to separate arguments for wildcard
-ESS_FILES = "$(wildcard README.md monty.h)"
+ESS_FILES = "$(wildcard README.md monty.h config.sh)"
 
 # Temporary files: Vim, Emacs, and backup for aspell original files
 TEMP = $(wildcard *.swp *~ *.bak)
@@ -165,10 +182,13 @@ TEMP = $(wildcard *.swp *~ *.bak)
 
 # Makefile should not be compiled if Essential files are missing
 
+# This conditional statement only confirms that at least one essential file is present
+# Needs extra modification
 ifneq ($(strip $(ESS_FILES)), "")
 
-all: $(SRC)
-	$(CC) $(CFLAGS) $? -o $(NAME)
+all: $(SRC) $(CONFIG_F)
+	$(CC) $(CFLAGS) $(SRC) -o $(NAME)
+	$(SHELL) $(CONFIG_F) $(INSTALL_CMD)
 
 
 .PHONY: with_debug \
@@ -181,16 +201,18 @@ all: $(SRC)
 	mem_check
 
 
-with_debug: $(SRC) # Uses the gcc debug build
-	$(CC) $(DEBUG_CFLAGS) $? -o $(NAME)
+with_debug: $(SRC) $(CONFIG_F) # Uses the gcc debug build
+	$(CC) $(DEBUG_CFLAGS) $(SRC) -o $(NAME)
+	$(SHELL) $(CONFIG_F) $(INSTALL_CMD)
 
-mem_check: with_debug $(NAME) # Run test for memory leaks using a sample \
+mem_check: with_debug # Run test for memory leaks using a sample \
 	bytecode file
-	$(MEM_CHECK) $(MC_FLAGS) ./$(NAME) $(BYTECODE_FILE)
+	$(MEM_CHECK) $(MC_FLAGS) $(NAME) $(BYTECODE_FILE)
 
-clean: # Clear the directory of all object codes, temporary files \
+clean: # $(CONFIG_F) Clear the directory of all object codes, temporary files \
 	and the executable
 	$(RM) $(OBJ) $(NAME) $(TEMP) $(LOG_FILE)
+	$(SHELL) $(CONFIG_F) $(UNINSTALL_CMD)
 
 betty_check: $(SRC) $(HEAD_FILES) # Ensure all source files are betty compliant
 	$(STYLE_CHECK) $?
@@ -207,6 +229,6 @@ ready_and_debug: clean check mem_check # Ensure code is error free and perfect
 
 else
 
-$(info "README.md or monty.h file(s) missing")
+$(info "README.md, config.sh or monty.h file(s) missing")
 
 endif
