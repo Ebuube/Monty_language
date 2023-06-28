@@ -42,7 +42,7 @@ Monty 0.98 is a scripting language that is first compiled into Monty byte codes 
 > #Note: Once installed, you can use monty anywhere in your machine :).
 
 ### To Uninstall
-Run the `clean` target of **make** thus:
+Run the `clean` target of **make** thus:<br>
 	```
 	vagrant@ubuntu:~$ make clean
 	```
