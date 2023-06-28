@@ -175,7 +175,7 @@ all: $(SRC)
 	clean \
 	check \
 	ready \
-	ready_and debug \
+	ready_and_debug \
 	betty_check \
 	spell_check \
 	mem_check
