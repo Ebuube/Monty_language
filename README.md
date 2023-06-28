@@ -5,22 +5,47 @@
 Monty 0.98 is a scripting language that is first compiled into Monty byte codes (Just like Python). It relies on a unique stack, with specific instructions to manipulate it. The goal of this project is to create an interpreter for Monty ByteCodes files. The `monty` interpreter is designed to execute instructions in a Monty ByteCode file.
 
 <details>
-<summary>Compilation: How to compile the program</summary>
+<summary>Installation and uninstalling: How to install the program</summary>
 
 1. First, clone this repository:
 	```
-	vagrant@ubuntu: git clone https://github.com/Ebuube/monty.git
+	vagrant@ubuntu:~$ git clone https://github.com/Ebuube/monty.git
 	```
 
 2. Then run the `Makefile`
 	> #Note: Ensure you have `gcc` and `make` installed on your system before running the Makefile.
 	```
-	vagrant@ubuntu: make
+	vagrant@ubuntu:~$ make
 	```
 
 	If you don't have `make` utility installed, check out how to install it. For Ubuntu, you can look at this documentation [How to install make on Ubuntu](https://linuxhint.com/install-make-ubuntu/)
 
-3. Confirm compilation by ensuring you now have the `monty` executable file present in that directory.
+3. Confirm installation by running the monty command on a sample bytecode file and expect the result shown below. Example:
+	```
+	vagrant@ubuntu:~$ cat bytecode.m
+	push 1
+	push 2
+	push 3
+	add
+	pint
+	push 4
+	pall
+	vagrant@ubuntu:~$ monty bytecode.m
+	5
+	4
+	5
+	1
+	vagrant@ubuntu:~$
+	```
+
+
+> #Note: Once installed, you can use monty anywhere in your machine :).
+
+### To Uninstall
+Run the `clean` target of **make** thus:
+	```
+	vagrant@ubuntu:~$ make clean
+	```
 
 </details>
 
@@ -29,7 +54,7 @@ Monty 0.98 is a scripting language that is first compiled into Monty byte codes 
 
 ## The monty program
 
-* Usage: `./monty file`
+* Usage: `monty file`
 	* where `file` is the path to the file containing Monty byte code
 
 * If the user does not give any file or more than one argument to your program, print the error message `USAGE: monty file`, followed by a new line, and exit with the status `EXIT_FAILURE`
@@ -59,7 +84,7 @@ push 1$
 push 2$
 push 3$
 pall$
-vagrant@ubuntu:~/monty$ ./monty bytecodes/00.m
+vagrant@ubuntu:~/monty$ monty bytecodes/00.m
 3
 2
 1
