@@ -139,6 +139,8 @@ vagrant@ubuntu:~/monty$
 		* the value of the element is 0
 		* the value of the element is not in the ASCII table
 		If the stack is empty, print only new line.
+* **rotl**: Usage: `rotl`
+	- This rotates the stack to the top. The top element of the stack becomes the last one, and the second top element of the stack becomes the first one.
 
 ### Comments
 You can create a comment in a bytecode file by starting the line with an hash `#`. You can as well have blank lines in your file. Example: In a file named bytecode.m
