@@ -133,6 +133,13 @@ vagrant@ubuntu:~/monty$
 * **pchar**: Usage: `pchar`
 	- This prints the character at the top of the stack, followed by a new line. The value at the top of the stack must be a valid decimal representation of an ASCII character. In other words, it should be in the range **0 - 127** inclusive.
 
+* **pstr**: Usage: `pstr`
+	- This prints the string starting at the top of the stack, followed by a new line. The string stops when either:
+		* the stack is over
+		* the value of the element is 0
+		* the value of the element is not in the ASCII table
+		If the stack is empty, print only new line.
+
 ### Comments
 You can create a comment in a bytecode file by starting the line with an hash `#`. You can as well have blank lines in your file. Example: In a file named bytecode.m
 	```
