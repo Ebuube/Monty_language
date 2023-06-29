@@ -15,7 +15,7 @@ opcode_func *get_opcode_func(void)
 		{"pop", _pop}, {"swap", _swap}, {"add", _add},
 		{"nop", _nop}, {"sub", _sub}, {"div", _div},
 		{"mul", _mul}, {"mod", _mod}, {"pchar", _pchar},
-		{"pstr", _pstr},
+		{"pstr", _pstr}, {"rotl", _rotl}, {"rotr", _rotr},
 		{NULL, NULL}
 	};
 
