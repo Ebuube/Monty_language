@@ -118,6 +118,33 @@ vagrant@ubuntu:~/monty$
 * **nop**: Usage: `nop`
 	- This opcode does **not** do anything.
 
+* **sub**: Usage: `sub`
+	- This subtracts the top element of the stack from the second top element. Then removes the top element of the stack so that the stack becomes one element shorter. The result is store in the currently top element of the stack.
+
+* **div**: Usage: `div`
+	- This divides the top element of the stack by the second top element. Then removes the top element of the stack so that the stack becomes one element shorter. The result is store in the currently top element of the stack.
+
+* **mul**: Usage: `mul`
+	- This multiply the second top element of the stack with the top element. Then removes the top element of the stack so that the stack becomes one element shorter. The result is store in the currently top element of the stack.
+
+* **mod**: Usage: `mod`
+	- This computes the rest of the division of the second top element of the stack by the top element of the stack. Then removes the top element of the stack so that the stack becomes one element shorter. The result is store in the currently top element of the stack.
+
+### Comments
+You can create a comment in a bytecode file by starting the line with an hash `#`. You can as well have blank lines in your file. Example: In a file named bytecode.m
+	```
+	vagrant@ubuntu:~$ cat bytecode.m
+	# Load new elements
+	push 4
+	push 3
+
+	# Print all elements
+	pall
+
+	#I may not give space immediately after the comment
+	# I may decide to do so, equally :)
+	```
+
 > Warning: Values outside INT\_MIN - INT\_MAX (both exclusive) can't be used as data values for the stack
 
 </details>
@@ -129,7 +156,7 @@ vagrant@ubuntu:~/monty$
 
 Files containing Monty byte codes usually have the `.m` extension. Most of the industry uses this standard but it is not required by the specification of the language. There is not more than one instruction per line. There can be any number of spaces before or after the opcode and its argument:
 
-Given a directory name `bytecodes` that contains Monty byte codes.
+Given a directory named `bytecodes` that contains Monty byte codes.
 ```
 vagrant@ubuntu:~/monty$ cat -e bytecodes/000.m
 push 0$
