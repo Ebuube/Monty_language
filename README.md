@@ -142,6 +142,9 @@ vagrant@ubuntu:~/monty$
 * **rotl**: Usage: `rotl`
 	- This rotates the stack to the top. The top element of the stack becomes the last one, and the second top element of the stack becomes the first one.
 
+* **rotr**: Usage: `rotr`
+	- This rotates the stack to the bottom. The last element of the stack becomes the top element of the stack.
+
 ### Comments
 You can create a comment in a bytecode file by starting the line with an hash `#`. You can as well have blank lines in your file. Example: In a file named bytecode.m
 	```
