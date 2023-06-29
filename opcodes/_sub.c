@@ -13,7 +13,6 @@
 void _sub(stack_t **stack, unsigned int line_number)
 {
 	stack_t *tmp = NULL;
-	size_t limit = 2;	/* required number of elements */
 
 	if (stack == NULL)
 	{
@@ -23,13 +22,13 @@ void _sub(stack_t **stack, unsigned int line_number)
 	}
 
 	/* Check if stack has up to limit-number of elements */
-	tmp = get_node_at((*stack), limit);
-	if (tmp == NULL)
+	if ((*stack) == NULL || (*stack)->next == NULL)
 	{
 		fprintf(stderr, "L%u: can't sub, stack too short\n",
 			line_number);
 		exit(EXIT_FAILURE);
 	}
+	tmp = (*stack)->next;
 
 	/* sub data (n) of first node from that of the second node */
 	tmp->n = tmp->n - tmp->prev->n;
