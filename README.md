@@ -130,6 +130,9 @@ vagrant@ubuntu:~/monty$
 * **mod**: Usage: `mod`
 	- This computes the rest of the division of the second top element of the stack by the top element of the stack. Then removes the top element of the stack so that the stack becomes one element shorter. The result is store in the currently top element of the stack.
 
+* **pchar**: Usage: `pchar`
+	- This prints the character at the top of the stack, followed by a new line. The value at the top of the stack must be a valid decimal representation of an ASCII character. In other words, it should be in the range **0 - 127** inclusive.
+
 ### Comments
 You can create a comment in a bytecode file by starting the line with an hash `#`. You can as well have blank lines in your file. Example: In a file named bytecode.m
 	```
