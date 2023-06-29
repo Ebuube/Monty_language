@@ -37,10 +37,8 @@ FILE *read_file(UNUSED stack_t **stack, UNUSED FILE *fp_stream)
 		else
 		{/* execute the instruction on the line */
 			bytecode.opcode = arr_tokens[0];
-			bytecode.opcode_arg =
-				(arr_tokens[1] == NULL ||
-				 (!isdigit(arr_tokens[1][0])) ? INT_MIN :
-				 atoi(arr_tokens[1]));
+			bytecode.opcode_arg = _strtoi(arr_tokens[1]);
+
 			/* execution */
 			execute(stack, line_number);
 		}

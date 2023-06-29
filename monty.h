@@ -87,6 +87,7 @@ size_t parse_line(char **arr_buffer, size_t buf_size, char *delim,
 int execute(stack_t **stack, unsigned int line_number);
 opcode_func *get_opcode_func(void);
 stack_t *get_node_at(stack_t *stack, size_t n);
+int _strtoi(char *str);
 
 
 /* Opcodes */
