@@ -12,6 +12,7 @@
 int _strtoi(UNUSED char *str)
 {
 	int num = 0;
+	size_t num_len = 0;
 
 	if (str == NULL)
 	{
@@ -25,6 +26,16 @@ int _strtoi(UNUSED char *str)
 		  str[0] != '+' ||
 		  str[0] != '-') &&
 		 (str[1] == '\n')))
+	{
+		return (INT_MIN);
+	}
+
+	/* Ensure that the whole string is a valid integer */
+	num_len = _intlen(num);
+
+	num_len = (str[0] == '+' || str[0] == '-') ? num_len + 1 : num_len;
+
+	if (num_len != strlen(str))
 	{
 		return (INT_MIN);
 	}
