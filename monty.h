@@ -54,9 +54,22 @@ typedef struct instruction_s
 } instruction_t;
 
 /**
+ * enum state_s - describes the state of the machine.
+ * Can either be in the 'stack' state or 'queue' state
+ * @LIFO: Last In, First Out state that is 'stack'
+ * @FIFO: First In, First Out state that is 'queue'
+ */
+enum state_s
+{
+	LIFO,
+	FIFO
+};
+
+/**
  * struct bytecode_s - properties of a line in a bytecode file
  * @opcode: a character string representing the opcode to run
  * @opcode_arg: a variable specifying the argument to the opcode
+ * @state: The operating state can be either 'LIFO' or 'FIFO' (enumerators)
  *
  * Description: bytecode file and the properties of a line in it;
  */
@@ -64,6 +77,7 @@ typedef struct bytecode_s
 {
 	char *opcode;
 	int opcode_arg;
+	enum state_s state;
 } bytecode_t;
 
 
@@ -107,13 +121,17 @@ void _pchar(stack_t **stack, unsigned int line_number);
 void _pstr(stack_t **stack, unsigned int line_number);
 void _rotl(stack_t **stack, unsigned int line_number);
 void _rotr(stack_t **stack, unsigned int line_number);
+void _stack(stack_t **stack, unsigned int line_number);
+void _queue(stack_t **stack, unsigned int line_number);
+void _q_push(stack_t **stack, unsigned int line_number);
 
 
 /* Global variables */
 
 extern bytecode_t bytecode;
 
-bytecode_t bytecode;	/* definition of global variable */
+/* definition of global variable */
+bytecode_t bytecode;
 
 
 #endif	/* __MONTY_H__ */

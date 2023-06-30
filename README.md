@@ -145,6 +145,16 @@ vagrant@ubuntu:~/monty$
 * **rotr**: Usage: `rotr`
 	- This rotates the stack to the bottom. The last element of the stack becomes the top element of the stack.
 
+* **stack**: Usage: `stack`
+	- Set the format of the data to a stack (LIFO). This is the default behaviour of the program.
+
+* **queue**: Usage: `queue`
+	- Set the format of the data to a queue (FIFO).
+
+### Note: When switching mode:
+	* The top of the stack becomes the front of the queue.
+	* The front of the queue becomes the top of the stack.
+
 ### Comments
 You can create a comment in a bytecode file by starting the line with an hash `#`. You can as well have blank lines in your file. Example: In a file named bytecode.m
 	```
