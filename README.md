@@ -146,7 +146,7 @@ vagrant@ubuntu:~/monty$
 	- This rotates the stack to the bottom. The last element of the stack becomes the top element of the stack.
 
 * **stack**: Usage: `stack`
-	- Set the format of the data to a stack (LIFO). This is the default behaviour of the program.
+	- Set the format of the data to a stack (LIFO). This is the default behaviour of the program :).
 
 * **queue**: Usage: `queue`
 	- Set the format of the data to a queue (FIFO).
