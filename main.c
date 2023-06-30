@@ -14,12 +14,7 @@ int main(UNUSED int argc, UNUSED char *argv[])
 	UNUSED char *mode = "r";	/* Mode for opening file */
 	stack_t *stack = NULL;	/* Stack to manipulate */
 
-	/* Set default state of the machine */
-	bytecode.opcode = NULL;
-	bytecode.opcode_arg = INT_MIN;
-	bytecode.state = LIFO;	/* Operating in stack mode */
-
-	if (argc != 2)
+	if (argc < 2)
 	{/* Ensure file name was passed on command line */
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);

@@ -9,4 +9,5 @@
  */
 void _nop(UNUSED stack_t **stack, UNUSED unsigned int line_number)
 {
+	return;
 }

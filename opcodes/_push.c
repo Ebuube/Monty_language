@@ -22,13 +22,6 @@ void _push(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	/* Redirect to a push function for queues */
-	if (bytecode.state == FIFO)
-	{
-		_q_push(stack, line_number);
-		return;
-	}
-
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
 	{/* Malloc failure */
