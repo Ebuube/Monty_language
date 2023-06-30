@@ -1,18 +1,19 @@
 #include "../monty.h"
 
 /**
- * _push - add a node to the top of the stack
+ * _q_push - add a node to the last element of the queue
  * @stack: address of the pointer to the stack
  * @line_number: line number to execute
  *
  * Description: Generates error and exits if unsuccessful
  * Return: nothing
  */
-void _push(stack_t **stack, unsigned int line_number)
+void _q_push(UNUSED stack_t **stack, UNUSED unsigned int line_number)
 {
 	stack_t *new = NULL;	/* new node */
+	stack_t *tmp = NULL;
 
-	if (stack == NULL)
+	if (stack  == NULL)
 	{
 		return;
 	}
@@ -22,27 +23,26 @@ void _push(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	/* Redirect to a push function for queues */
-	if (bytecode.state == FIFO)
-	{
-		_q_push(stack, line_number);
-		return;
-	}
-
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
 	{/* Malloc failure */
-		fprintf(stderr, "Error: malloc failed\n");
+		fprintf(stderr, "Error: malloc failure\n");
 		exit(EXIT_FAILURE);
 	}
-
 	new->n = bytecode.opcode_arg;	/* assign values */
 	new->prev = new->next = NULL;	/* Initialize pointers */
 
-	/* Add the node at the beginning of the list */
-	new->next = (*stack);
-	if ((*stack) != NULL)	/* Non-empty list */
-		(*stack)->prev = new;
+	/* link node */
+	if ((*stack) == NULL)
+	{/* For empty queue */
+		(*stack) = new;
+		return;
+	}
 
-	(*stack) = new;
+	for (tmp = (*stack); tmp->next != NULL; tmp = tmp->next)
+		;	/* get to the last node */
+
+	tmp->next = new;
+	new->prev = tmp;
+	new->next = NULL;
 }
