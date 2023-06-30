@@ -5,22 +5,47 @@
 Monty 0.98 is a scripting language that is first compiled into Monty byte codes (Just like Python). It relies on a unique stack, with specific instructions to manipulate it. The goal of this project is to create an interpreter for Monty ByteCodes files. The `monty` interpreter is designed to execute instructions in a Monty ByteCode file.
 
 <details>
-<summary>Compilation: How to compile the program</summary>
+<summary>Installation and uninstalling: How to install the program</summary>
 
 1. First, clone this repository:
 	```
-	vagrant@ubuntu: git clone https://github.com/Ebuube/monty.git
+	vagrant@ubuntu:~$ git clone https://github.com/Ebuube/monty.git
 	```
 
 2. Then run the `Makefile`
 	> #Note: Ensure you have `gcc` and `make` installed on your system before running the Makefile.
 	```
-	vagrant@ubuntu: make
+	vagrant@ubuntu:~$ make
 	```
 
 	If you don't have `make` utility installed, check out how to install it. For Ubuntu, you can look at this documentation [How to install make on Ubuntu](https://linuxhint.com/install-make-ubuntu/)
 
-3. Confirm compilation by ensuring you now have the `monty` executable file present in that directory.
+3. Confirm installation by running the monty command on a sample bytecode file and expect the result shown below. Example:
+	```
+	vagrant@ubuntu:~$ cat bytecode.m
+	push 1
+	push 2
+	push 3
+	add
+	pint
+	push 4
+	pall
+	vagrant@ubuntu:~$ monty bytecode.m
+	5
+	4
+	5
+	1
+	vagrant@ubuntu:~$
+	```
+
+
+> #Note: Once installed, you can use monty anywhere in your machine :).
+
+### To Uninstall
+Run the `clean` target of **make** thus:<br>
+	```
+	vagrant@ubuntu:~$ make clean
+	```
 
 </details>
 
@@ -29,7 +54,7 @@ Monty 0.98 is a scripting language that is first compiled into Monty byte codes 
 
 ## The monty program
 
-* Usage: `./monty file`
+* Usage: `monty file`
 	* where `file` is the path to the file containing Monty byte code
 
 * If the user does not give any file or more than one argument to your program, print the error message `USAGE: monty file`, followed by a new line, and exit with the status `EXIT_FAILURE`
@@ -59,7 +84,7 @@ push 1$
 push 2$
 push 3$
 pall$
-vagrant@ubuntu:~/monty$ ./monty bytecodes/00.m
+vagrant@ubuntu:~/monty$ monty bytecodes/00.m
 3
 2
 1
@@ -93,6 +118,58 @@ vagrant@ubuntu:~/monty$
 * **nop**: Usage: `nop`
 	- This opcode does **not** do anything.
 
+* **sub**: Usage: `sub`
+	- This subtracts the top element of the stack from the second top element. Then removes the top element of the stack so that the stack becomes one element shorter. The result is store in the currently top element of the stack.
+
+* **div**: Usage: `div`
+	- This divides the top element of the stack by the second top element. Then removes the top element of the stack so that the stack becomes one element shorter. The result is store in the currently top element of the stack.
+
+* **mul**: Usage: `mul`
+	- This multiply the second top element of the stack with the top element. Then removes the top element of the stack so that the stack becomes one element shorter. The result is store in the currently top element of the stack.
+
+* **mod**: Usage: `mod`
+	- This computes the rest of the division of the second top element of the stack by the top element of the stack. Then removes the top element of the stack so that the stack becomes one element shorter. The result is store in the currently top element of the stack.
+
+* **pchar**: Usage: `pchar`
+	- This prints the character at the top of the stack, followed by a new line. The value at the top of the stack must be a valid decimal representation of an ASCII character. In other words, it should be in the range **0 - 127** inclusive.
+
+* **pstr**: Usage: `pstr`
+	- This prints the string starting at the top of the stack, followed by a new line. The string stops when either:
+		* the stack is over
+		* the value of the element is 0
+		* the value of the element is not in the ASCII table
+		If the stack is empty, print only new line.
+* **rotl**: Usage: `rotl`
+	- This rotates the stack to the top. The top element of the stack becomes the last one, and the second top element of the stack becomes the first one.
+
+* **rotr**: Usage: `rotr`
+	- This rotates the stack to the bottom. The last element of the stack becomes the top element of the stack.
+
+* **stack**: Usage: `stack`
+	- Set the format of the data to a stack (LIFO). This is the default behaviour of the program :).
+
+* **queue**: Usage: `queue`
+	- Set the format of the data to a queue (FIFO).
+
+### Note: When switching mode:
+	* The top of the stack becomes the front of the queue.
+	* The front of the queue becomes the top of the stack.
+
+### Comments
+You can create a comment in a bytecode file by starting the line with an hash `#`. You can as well have blank lines in your file. Example: In a file named bytecode.m
+	```
+	vagrant@ubuntu:~$ cat bytecode.m
+	# Load new elements
+	push 4
+	push 3
+
+	# Print all elements
+	pall
+
+	#I may not give space immediately after the comment
+	# I may decide to do so, equally :)
+	```
+
 > Warning: Values outside INT\_MIN - INT\_MAX (both exclusive) can't be used as data values for the stack
 
 </details>
@@ -104,7 +181,7 @@ vagrant@ubuntu:~/monty$
 
 Files containing Monty byte codes usually have the `.m` extension. Most of the industry uses this standard but it is not required by the specification of the language. There is not more than one instruction per line. There can be any number of spaces before or after the opcode and its argument:
 
-Given a directory name `bytecodes` that contains Monty byte codes.
+Given a directory named `bytecodes` that contains Monty byte codes.
 ```
 vagrant@ubuntu:~/monty$ cat -e bytecodes/000.m
 push 0$
@@ -155,3 +232,4 @@ vagrant@ubuntu:~/monty$
 
 ## Acknowledgements
 [![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)](https://git-scm.com/) [![GITHUB](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/) [![Generic badge](https://img.shields.io/badge/ALX-AFRICA-white.svg)](https://www.alxafrica.com/)
+

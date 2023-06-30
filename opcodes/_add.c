@@ -15,7 +15,6 @@
 void _add(stack_t **stack, unsigned int line_number)
 {
 	stack_t *tmp = NULL;
-	size_t i = 0;	/* iterator */
 
 	if (stack == NULL)
 	{
@@ -24,20 +23,14 @@ void _add(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	/* Check if stack has up to 2 elements */
-	for (i = 0, tmp = (*stack); tmp != NULL && i < 2; i++)
-	{
-		tmp = tmp->next;
-	}
-	if (tmp == NULL && i < 2)
+	/* Check if stack has up to limit-number of elements */
+	if ((*stack) == NULL || (*stack)->next == NULL)
 	{
 		fprintf(stderr, "L%u: can't add, stack too short\n",
 			line_number);
 		exit(EXIT_FAILURE);
 	}
-
-	/* We are at the third node in the list, which can be NULL */
-	tmp = tmp->prev;	/* step one node back to make a swap */
+	tmp = (*stack)->next;
 
 	/* add data (n) of first two nodes */
 	tmp->n = tmp->n + tmp->prev->n;
