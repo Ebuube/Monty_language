@@ -49,13 +49,15 @@ Monty 0.98 is a scripting language that is first compiled into Monty byte codes 
 
 ### To Uninstall
 Change into the repository you cloned and run the `clean` target of **make** thus:<br>
+<br>
 	```
-(&nbsp;)(&nbsp;)(&nbsp;)(&nbsp;)vagrant@ubuntu:~/Monty_language$ make clean
+	vagrant@ubuntu:~/Monty_language$ make clean
 	```
 <br>
 If the repo has been deleted or is no where to be found, you can easily unisintall 'monty' by removing the binary file from the **/usr/bin** directory thus:<br>
+<br>
 	```
-(&nbsp;)(&nbsp;)(&nbsp;)(&nbsp;)vagrant@ubuntu:~$ sudo rm /usr/bin/monty
+	vagrant@ubuntu:~$ sudo rm /usr/bin/monty
 	```
 <br>
 
