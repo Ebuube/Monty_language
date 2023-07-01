@@ -1,6 +1,6 @@
 # The Monty Language Interpreter
 
-[![Generic badge](https://img.shields.io/badge/Maintained-Yes-green.svg)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/Made%20With-C-blue.svg)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/contributors-1-green.svg)](https://shields.io/) [![Generic badge](https://img.shields.io/badge/release-1.0.0-green.svg)](https://shields.io/)
+[![Generic badge](https://img.shields.io/badge/Maintained-Yes-green.svg)](https://github.com/Ebuube) [![Generic badge](https://img.shields.io/badge/Made%20With-C-blue.svg)](https://en.wikipedia.org/wiki/C_(programming_language)) [![Generic badge](https://img.shields.io/badge/contributors-1-green.svg)](https://github.com/Ebuube) [![Generic badge](https://img.shields.io/badge/release-1.0.0-green.svg)](https://github.com/Ebuube/Monty_language)
 
 Monty 0.98 is a scripting language that is first compiled into Monty byte codes (Just like Python). It relies on a unique stack, with specific instructions to manipulate it. The goal of this project is to create an interpreter for Monty ByteCodes files. The `monty` interpreter is designed to execute instructions in a Monty ByteCode file.
 
@@ -9,18 +9,24 @@ Monty 0.98 is a scripting language that is first compiled into Monty byte codes 
 
 1. First, clone this repository:
 	```
-	vagrant@ubuntu:~$ git clone https://github.com/Ebuube/monty.git
+	vagrant@ubuntu:~$ git clone https://github.com/Ebuube/Monty_language.git
 	```
 
-2. Then run the `Makefile`
+2. Change into this newly created directory:<br>
+	```
+	vagrant@ubuntu:~$ cd Monty_language
+	vagrant@ubuntu:~/Monty_language$
+	```
+
+3. Then run the `Makefile`
 	> #Note: Ensure you have `gcc` and `make` installed on your system before running the Makefile.
 	```
-	vagrant@ubuntu:~$ make
+	vagrant@ubuntu:~/Monty_language$ make
 	```
 
 	If you don't have `make` utility installed, check out how to install it. For Ubuntu, you can look at this documentation [How to install make on Ubuntu](https://linuxhint.com/install-make-ubuntu/)
 
-3. Confirm installation by running the monty command on a sample bytecode file and expect the result shown below. Example:
+4. Confirm installation by running the monty command on a sample bytecode file and expect the result shown below. Example:
 	```
 	vagrant@ubuntu:~$ cat bytecode.m
 	push 1
@@ -42,10 +48,19 @@ Monty 0.98 is a scripting language that is first compiled into Monty byte codes 
 > #Note: Once installed, you can use monty anywhere in your machine :).
 
 ### To Uninstall
-Run the `clean` target of **make** thus:<br>
+Change into the repository you cloned and run the `clean` target of **make** thus:<br>
+<br>
 	```
-	vagrant@ubuntu:~$ make clean
+	vagrant@ubuntu:~/Monty_language$ make clean
 	```
+<br>
+<br>
+If the repo has been deleted or is no where to be found, you can easily unisintall 'monty' by removing the binary file from the **/usr/bin** directory thus:<br>
+<br>
+	```
+	vagrant@ubuntu:~$ sudo rm /usr/bin/monty
+	```
+<br>
 
 </details>
 
@@ -232,4 +247,3 @@ vagrant@ubuntu:~/monty$
 
 ## Acknowledgements
 [![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)](https://git-scm.com/) [![GITHUB](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/) [![Generic badge](https://img.shields.io/badge/ALX-AFRICA-white.svg)](https://www.alxafrica.com/)
-
