@@ -9,18 +9,24 @@ Monty 0.98 is a scripting language that is first compiled into Monty byte codes 
 
 1. First, clone this repository:
 	```
-	vagrant@ubuntu:~$ git clone https://github.com/Ebuube/monty.git
+	vagrant@ubuntu:~$ git clone https://github.com/Ebuube/Monty_language.git
 	```
 
-2. Then run the `Makefile`
+2. Change into this newly created directory:<br>
+	```
+	vagrant@ubuntu:~$ cd Monty_language
+	vagrant@ubuntu:~/Monty_language$
+	```
+
+3. Then run the `Makefile`
 	> #Note: Ensure you have `gcc` and `make` installed on your system before running the Makefile.
 	```
-	vagrant@ubuntu:~$ make
+	vagrant@ubuntu:~/Monty_language$ make
 	```
 
 	If you don't have `make` utility installed, check out how to install it. For Ubuntu, you can look at this documentation [How to install make on Ubuntu](https://linuxhint.com/install-make-ubuntu/)
 
-3. Confirm installation by running the monty command on a sample bytecode file and expect the result shown below. Example:
+4. Confirm installation by running the monty command on a sample bytecode file and expect the result shown below. Example:
 	```
 	vagrant@ubuntu:~$ cat bytecode.m
 	push 1
@@ -42,9 +48,13 @@ Monty 0.98 is a scripting language that is first compiled into Monty byte codes 
 > #Note: Once installed, you can use monty anywhere in your machine :).
 
 ### To Uninstall
-Run the `clean` target of **make** thus:<br>
+Change into the repository you cloned and run the `clean` target of **make** thus:<br>
 	```
-	vagrant@ubuntu:~$ make clean
+	vagrant@ubuntu:~/Monty_language$ make clean
+	```
+If the repo has been deleted or is no where to be found, you can easily unisintall 'monty' by removing the binary file from the **/usr/bin** directory thus:<br>
+	```
+	vagrant@ubuntu:~$ sudo rm /usr/bin/monty
 	```
 
 </details>
